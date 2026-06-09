@@ -1,0 +1,25 @@
+{
+  "name": "research-toolkit",
+  "owner": {
+    "name": "research-toolkit contributors"
+  },
+  "metadata": {
+    "description": "Academic research toolkit — paper reading, reviewing, idea generation, implementation advising, and research radar skills with shared reference policies",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "research-toolkit",
+      "description": "Complete academic research toolkit: paper reader, paper reviewer, research idea generator, implementation advisor, and research radar — all sharing common research principles, evidence policies, search policies, and failure handling guidelines",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./implementation-advisor",
+        "./paper-reader",
+        "./paper-reviewer",
+        "./research-idea-generator",
+        "./research-radar"
+      ]
+    }
+  ]
+}
