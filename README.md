@@ -1,65 +1,84 @@
+<div align="right">
+
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+</div>
+
 # research-toolkit
 
-Academic research toolkit for AI coding agents — a set of 5 skills that help you read papers, review papers, generate research ideas, plan implementations, and survey research fields. All skills share a common set of reference policies for rigorous, evidence-driven research.
+> Skills are not just tools to download — they are a way to encode and reuse your own research workflow.
+
+A modular Research OS for AI coding agents, designed to help researchers understand papers, evaluate scientific claims, discover research opportunities, and accelerate implementation.
+
+Unlike many generic prompt collections, **research-toolkit** focuses on building reusable research workflows. The goal is not to provide a single "perfect" skill, but to offer a framework that researchers can customize according to their own domains, interests, and working styles.
+
+---
+
+## Why This Project?
+
+Most public skills aim for maximum generality.
+
+That makes them useful for many people, but often less effective for any specific individual.
+
+Research workflows are highly personal:
+
+* Some researchers focus on mathematical derivations.
+* Some focus on experimental design.
+* Some care most about engineering implementation.
+* Some care about novelty, reproducibility, and publication potential.
+
+As a result, there is no universally "best" research skill.
+
+This project takes a different approach:
+
+* Build modular skills.
+* Share common research principles.
+* Customize domain knowledge.
+* Adapt the workflow to your own research style.
+
+---
 
 ## Skills
 
-| Skill | Description |
-|-------|-------------|
-| `paper-reader` | Understand papers efficiently — extract metadata, explain methods, interpret experiments, build knowledge graphs |
-| `paper-reviewer` | Evaluate scientific quality — assess novelty, technical soundness, experimental quality, provide reviewer feedback |
-| `research-idea-generator` | Discover research opportunities — gap analysis, cross-domain exploration, feasibility assessment |
-| `implementation-advisor` | Plan reproduction and deployment — reproducibility analysis, engineering roadmap, risk assessment |
-| `research-radar` | Survey research fields — trend analysis, technology evolution, landscape mapping |
+| Skill                     | Purpose                                                                                                         |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `paper-reader`            | Understand papers efficiently, extract metadata, explain methods, interpret experiments, build knowledge graphs |
+| `paper-reviewer`          | Evaluate scientific quality, assess novelty, technical soundness, experimental design, and reproducibility      |
+| `research-idea-generator` | Discover research opportunities through gap analysis and cross-domain exploration                               |
+| `implementation-advisor`  | Plan reproduction, deployment, engineering roadmaps, and risk assessment                                        |
+| `research-radar`          | Analyze research landscapes, technology evolution, and future trends                                            |
 
-
+---
 
 ## Shared References
 
-All skills load these policies before execution:
+All skills share a lightweight policy layer to ensure consistent behavior.
 
-| Reference | Content |
-|-----------|---------|
-| `research-principles.md` | 8 core research principles (understand before judging, evidence before conclusion, etc.) |
-| `evidence-policy.md` | 4-level evidence hierarchy for source evaluation |
-| `search-policy.md` | Search priority rules and retry limits |
-| `failure-handling.md` | Guidelines for missing information and process termination |
+### Core References
 
-On-demand references:
-- `domain-expansions.md` — domain-specific knowledge (navigation, optics, DL, RL, LLM, agents)
-- `venue-standards.md` — venue-specific evaluation criteria (TIM, TNNLS, ICRA, NeurIPS)
+| Reference                | Purpose                                              |
+| ------------------------ | ---------------------------------------------------- |
+| `research-principles.md` | Core research principles and reasoning rules         |
+| `evidence-policy.md`     | Evidence hierarchy and source credibility guidelines |
+| `search-policy.md`       | Search priorities and retrieval strategies           |
+| `failure-handling.md`    | Missing information and termination policies         |
 
+### Optional References
 
+| Reference              | Purpose                                                  |
+| ---------------------- | -------------------------------------------------------- |
+| `domain-expansions.md` | Domain-specific knowledge and analysis perspectives      |
+| `venue-standards.md`   | Venue-specific review criteria and publication standards |
 
-## Installation
-
-### Claude Code
-
-```bash
-# Register the marketplace
-/plugin marketplace add Light-zju/research-toolkit
-
-# Install the skills
-/plugin install research-toolkit@research-toolkit
-
-# Reload to apply
-/reload-plugins
-```
-
-### Codex / Other Agents (via npx skills)
-
-```bash
-npx skills add https://github.com/Light-zju/research-toolkit
-```
-
-
+---
 
 ## Directory Structure
 
-```
+```text
 research-toolkit/
 ├── .claude-plugin/
 │   └── marketplace.json
+│
 ├── references/
 │   ├── research-principles.md
 │   ├── evidence-policy.md
@@ -67,28 +86,113 @@ research-toolkit/
 │   ├── failure-handling.md
 │   ├── domain-expansions.md
 │   └── venue-standards.md
+│
 ├── paper-reader/
 │   └── SKILL.md
+│
 ├── paper-reviewer/
 │   └── SKILL.md
+│
 ├── research-idea-generator/
 │   └── SKILL.md
+│
 ├── implementation-advisor/
 │   └── SKILL.md
+│
 └── research-radar/
     └── SKILL.md
 ```
 
+---
 
+## Installation
+
+### Claude Code
+
+```bash
+# Register marketplace
+/plugin marketplace add Light-zju/research-toolkit
+
+# Install toolkit
+/plugin install research-toolkit@research-toolkit
+
+# Reload plugins
+/reload-plugins
+```
+
+### Codex and Other Agents
+
+```bash
+npx skills add https://github.com/Light-zju/research-toolkit
+```
+
+---
 
 ## Customization
 
-To adapt for your own research domain:
-1. Edit `references/domain-expansions.md` to add your field's key concepts
-2. Edit `references/venue-standards.md` to add your target venues
-3. Each skill's `SKILL.md` frontmatter `description` controls when it triggers — adjust for your use cases
+The toolkit is designed to be modified.
 
+### Add Your Research Domain
 
+Edit:
+
+```text
+references/domain-expansions.md
+```
+
+Add:
+
+* domain concepts
+* evaluation perspectives
+* technical priorities
+* research methodologies
+
+### Add Your Target Venues
+
+Edit:
+
+```text
+references/venue-standards.md
+```
+
+Add:
+
+* journals
+* conferences
+* review criteria
+* publication expectations
+
+### Modify Skill Trigger Conditions
+
+Each skill can be customized by editing:
+
+```text
+SKILL.md
+```
+
+especially its frontmatter:
+
+```yaml
+description:
+```
+
+which controls when the skill should be activated.
+
+---
+
+## Philosophy
+
+This project is built around a simple idea:
+
+> The value of a skill is not in downloading it, but in adapting it.
+
+Instead of searching endlessly for the perfect skill, researchers can gradually encode their own workflows, habits, and reasoning processes into reusable skills.
+
+The toolkit is intended to be a starting point, not an endpoint.
+
+Fork it, modify it, and make it your own.
+
+---
 
 ## License
 
