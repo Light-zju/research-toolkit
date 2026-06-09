@@ -115,7 +115,7 @@ research-toolkit/
 /plugin marketplace add Light-zju/research-toolkit
 
 # 安装工具集
-/plugin install research-toolkit@research-toolkit
+/plugin install research-toolkit@Light-zju-research-toolkit
 
 # 重新加载插件
 /reload-plugins
