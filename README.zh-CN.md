@@ -8,6 +8,8 @@
 
 与许多通用 Prompt 或 Skills 集合不同，**research-toolkit** 更关注科研工作流本身。它并不试图提供一个适用于所有人的“完美 Skill”，而是提供一套可扩展、可定制的 Research OS 框架，让研究者能够逐步将自己的科研习惯和思考方式沉淀为可复用的 Skills。
 
+<img width="1185" height="380" alt="1" src="https://github.com/user-attachments/assets/a4558809-9ee4-4ab6-874e-2134bcd27cb9" />
+
 ------
 
 ## 为什么要做这个项目？
