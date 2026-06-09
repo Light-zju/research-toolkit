@@ -12,6 +12,8 @@ A modular Research OS for AI coding agents, designed to help researchers underst
 
 Unlike many generic prompt collections, **research-toolkit** focuses on building reusable research workflows. The goal is not to provide a single "perfect" skill, but to offer a framework that researchers can customize according to their own domains, interests, and working styles.
 
+<img width="1185" height="380" alt="1" src="https://github.com/user-attachments/assets/074c8de5-5a07-4087-862a-50208005ccb3" />
+
 ---
 
 ## Why This Project?
